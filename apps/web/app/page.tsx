@@ -32,11 +32,46 @@ import {
   AlertDialogTrigger,
 } from "@repo/ui/components/ui/alert-dialog"
 
+interface Project {
+  id: number;
+  project: string;
+}
+
 export default function CardWithForm() {
   const [isOpen, setIsOpen] = useState(false);
 
   const openDialog = () => setIsOpen(true);
   const closeDialog = () => setIsOpen(false);
+
+  // let data;
+  // const response = await fetch('/api/projects');
+  // if(response.ok)
+  //   data = await response.json();
+
+  // const { rows: projects} = data
+
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/projects");
+        const data = await response.json();
+
+        console.log("API Response:", data);  // Debug the structure of the response
+        if (Array.isArray(data.projects)) {
+          setProjects(data.projects); // Only set users if it's an array
+        } else {
+          console.error("project is not an array");
+          setProjects([]); // Set to empty array if the response is not as expected
+        }
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <Card className="w-[350px]">
@@ -58,10 +93,7 @@ export default function CardWithForm() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="Discovery">Discovery</SelectItem>
-                  <SelectItem value="Telesure">Telesure</SelectItem>
-                  <SelectItem value="OUTsurance">OUTsurance</SelectItem>
-                  <SelectItem value="Nedbank">Nedbank</SelectItem>
+                  {projects.map((project) => (<SelectItem key={project.id} value={project.project}>{project.project}</SelectItem>))}
                 </SelectContent>
               </Select>
             </div>
