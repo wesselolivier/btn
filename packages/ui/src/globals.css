@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav {
+    padding: 10px;
+    padding-bottom: 30px;
+    background-color: #000000;
+    align-items: center;
+  }
+  
+  nav a {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  nav a:hover {
+    color: #0070f3;
+  }
+
+  .dialogTitle {
+    color: #000000;
+    font: bold;
+  }
+
+  .about-container {
+    width: 350px;
+    height: 320px;
+    margin: 0 auto; /* Center horizontally */
+  }
