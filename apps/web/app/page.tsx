@@ -68,10 +68,10 @@ export default function CardWithForm() {
                   <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="next">Discovery</SelectItem>
-                  <SelectItem value="sveltekit">Telesure</SelectItem>
-                  <SelectItem value="astro">OUTsurance</SelectItem>
-                  <SelectItem value="nuxt">Nedbank</SelectItem>
+                  <SelectItem value="Discovery">Discovery</SelectItem>
+                  <SelectItem value="Telesure">Telesure</SelectItem>
+                  <SelectItem value="OUTsurance">OUTsurance</SelectItem>
+                  <SelectItem value="Nedbank">Nedbank</SelectItem>
                 </SelectContent>
               </Select>
             </div>
