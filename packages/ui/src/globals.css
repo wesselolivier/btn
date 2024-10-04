@@ -25,6 +25,11 @@ nav {
     font: bold;
   }
 
+  .btnLabel {
+    color: #000000;
+    font: bold;
+  }
+
   .container {
     width: 350px;
     height: 320px;
