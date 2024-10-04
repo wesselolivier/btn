@@ -92,7 +92,7 @@ export default function CardWithForm() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={closeDialog}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="btnLabel" onClick={closeDialog}>Cancel</AlertDialogCancel>
             <AlertDialogAction onClick={closeDialog}>Transfer</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
