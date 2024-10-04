@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   try {
-    const projects = await sql`SELECT * FROM projects`; // Modify the query based on your schema
+    const projects = await sql`SELECT * FROM projects`;
     return NextResponse.json({ projects: projects.rows }, {status: 200});
   } catch (error) {
     console.error(error);
