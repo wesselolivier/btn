@@ -43,13 +43,6 @@ export default function CardWithForm() {
   const openDialog = () => setIsOpen(true);
   const closeDialog = () => setIsOpen(false);
 
-  // let data;
-  // const response = await fetch('/api/projects');
-  // if(response.ok)
-  //   data = await response.json();
-
-  // const { rows: projects} = data
-
   const [projects, setProjects] = useState<Project[]>([]);
 
   React.useEffect(() => {
