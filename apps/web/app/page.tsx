@@ -53,7 +53,7 @@ export default function CardWithForm() {
 
         console.log("API Response:", data);
         if (Array.isArray(data.projects)) {
-          setProjects(data.projects); // Only set users if it's an array
+          setProjects(data.projects);
         } else {
           console.error("project is not an array");
           setProjects([]); // Set to empty array if the response is not as expected
