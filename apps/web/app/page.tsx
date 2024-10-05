@@ -51,7 +51,7 @@ export default function CardWithForm() {
         const response = await fetch("/api/projects");
         const data = await response.json();
 
-        console.log("API Response:", data);  // Debug the structure of the response
+        console.log("API Response:", data);
         if (Array.isArray(data.projects)) {
           setProjects(data.projects); // Only set users if it's an array
         } else {
