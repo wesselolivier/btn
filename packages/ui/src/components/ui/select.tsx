@@ -1,7 +1,7 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Select, SelectGroup, SelectValue } from "@radix-ui/react-select"
 import { cn } from "@repo/ui/lib/utils"
-import { ChevronDown, ChevronUp, Check } from "lucide-react"
+import { ChevronDown, ChevronUp, } from "lucide-react"
 import React from "react"
 
 const SelectTrigger = React.forwardRef<
@@ -91,12 +91,6 @@ const SelectItem = React.forwardRef<
     className={cn("select-item", className)}
     {...props}
   >
-    <span className="item-indicator-wrapper">
-      <SelectPrimitive.ItemIndicator>
-        <Check className="check-icon" />
-      </SelectPrimitive.ItemIndicator>
-    </span>
-
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
 ))
