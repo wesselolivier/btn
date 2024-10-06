@@ -5,15 +5,32 @@
 nav {
     padding: 10px;
     padding-bottom: 30px;
-    background-color: #0a0a0a;
+    background-color: transparent;
     align-items: center;
+  }
+  
+  :root {
+    --nav-link-color: #ffffff;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --nav-link-color: #ffffff;
+    }
+  }
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      --nav-link-color: #000000;
+    }
   }
   
   nav a {
     margin-left: 20px;
     margin-right: 20px;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--nav-link-color);
+    font-weight: 600;
   }
   
   nav a:hover {
@@ -385,7 +402,36 @@ nav {
   
   input.custom-input::placeholder {
     color: #94a3b8;
-  }  
+  }
+
+  input.custom-input:focus-visible {
+    outline: none; /* focus-visible:outline-none */
+    box-shadow: 0 0 0 2px #1e293b, 0 0 0 4px white; /* focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 */
+  }
+  
+
+  input.custom-input:disabled {
+    cursor: not-allowed; /* disabled:cursor-not-allowed */
+    opacity: 0.5; /* disabled:opacity-50 */
+  }
+  
+  input.custom-input.dark {
+    border-color: #334155; /* dark:border-slate-800 */
+    background-color: #0f172a; /* dark:bg-slate-950 */
+    outline-offset: #0f172a; /* dark:ring-offset-slate-950 */
+  }
+  
+  input.custom-input.dark::placeholder {
+    color: #94a3b8; /* dark:placeholder:text-slate-400 */
+  }
+  
+  input.custom-input.dark:focus-visible {
+    box-shadow: 0 0 0 2px #64748b; /* dark:focus-visible:ring-slate-300 */
+  }
+  
+  input.custom-input.dark::file-selector-button {
+    color: #ffffff; /* dark:file:text-slate-50 */
+  }
 
 .label {
   font-size: 14px;
